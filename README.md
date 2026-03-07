@@ -1,4 +1,4 @@
-# 🕛 Payo's Screentime Reducer 🕛
+# 🕛 Payo's Screentime Reducer (ScreenGO1) 🕛
 
 ![App Screenshot](Repo1mages/Img.png)
 
