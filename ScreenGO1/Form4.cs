@@ -26,7 +26,7 @@ namespace ScreenGO1
 
         private void Form4_Load(object sender, EventArgs e)
         {
-            
+
 
         }
 
@@ -55,5 +55,7 @@ namespace ScreenGO1
             CreditIMPORTANT putis = new CreditIMPORTANT();
             putis.ShowDialog();
         }
+
+        
     }
 }

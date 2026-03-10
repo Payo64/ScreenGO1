@@ -37,6 +37,7 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.label6 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.Draggable_Panel = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // label1
@@ -103,20 +104,35 @@
             this.label3.Text = "10";
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
+            // Draggable_Panel
+            // 
+            this.Draggable_Panel.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.Draggable_Panel.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.Draggable_Panel.Location = new System.Drawing.Point(-6, -1);
+            this.Draggable_Panel.Name = "Draggable_Panel";
+            this.Draggable_Panel.Size = new System.Drawing.Size(607, 18);
+            this.Draggable_Panel.TabIndex = 11;
+            this.Draggable_Panel.Paint += new System.Windows.Forms.PaintEventHandler(this.Draggable_Panel_Paint);
+            this.Draggable_Panel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Draggable_Panel_MouseDown);
+            // 
             // Form2
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(599, 276);
+            this.Controls.Add(this.Draggable_Panel);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Form2";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Time is over";
+            this.Load += new System.EventHandler(this.Form2_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -131,5 +147,6 @@
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Panel Draggable_Panel;
     }
 }

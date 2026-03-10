@@ -101,9 +101,9 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(12, 163);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(145, 20);
+            this.label3.Size = new System.Drawing.Size(165, 20);
             this.label3.TabIndex = 5;
-            this.label3.Text = "Version Pre-Alpha";
+            this.label3.Text = "Version: v0.2.1-alpha";
             // 
             // label4
             // 
