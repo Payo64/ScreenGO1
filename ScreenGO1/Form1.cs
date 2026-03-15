@@ -4,48 +4,107 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Windows.Forms;
-
+using static ScreenGO1.Form7;
+// some parts are handled by ai
+// dont worry though i tried to minimized ai generated code as much as possible.
+// so its maybe about 15/20% idk
 namespace ScreenGO1
 {
     public partial class Form1 : Form
     {
+        bool IsTimerRunning = false;
         int seconds = 0;
+        int Placeholder;
+        int PausedActive = 0;
+
+
+
         public Form1()
         {
             InitializeComponent();
             button2.Enabled = false;
+            int PausedActive = 0;
+            pausetimer.Enabled = false;
+            if (Properties.Settings.Default.resetsound == 1)
+            {
+                DataForm1.soundfilepathform1 = Properties.Settings.Default.customSoundfile;
+                DataStore.globalInteger = 1;
+            }
+            else
+            {
+                Properties.Settings.Default.customSoundfile = string.Empty;
+                Properties.Settings.Default.globalsoundcustom = 0;
+                DataStore.globalInteger = 0;
+            }
         }
-        
 
+        public class DataForm1
+        {
+            public static string soundfilepathform1;
+        }
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            toolStrip1.RenderMode = ToolStripRenderMode.System;
+        }
         private void timer1_Tick(object sender, EventArgs e)
         {
             label1.Text = seconds--.ToString();
             if (seconds < 0)
             {
                 timer1.Stop();
-                label1.Text = "0";
+                label1.Text = "00";
+                
+                
                 Form2 form2 = new Form2();
                 form2.ShowDialog();
+                pausetimer.Enabled = false;
+                button2.Enabled = false;
+                button1.Enabled = true;
+                notifyIcon1.Text = "ScreenGO1 - Stopped";
+                this.Text = "ScreenGO1 - Stopped";
+                
             }
-            
+            notifyIcon1.Text = "ScreenGO1 - " + (seconds + 1) + " Seconds remaning";
+            this.Text = "ScreenGO1 - " + (seconds + 1) + " Seconds remaning";
 
 
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(textBox1.Text))
+            if (PausedActive == 0)
             {
-                MessageBox.Show("Please enter a number to start");
+                if (string.IsNullOrEmpty(textBox1.Text))
+                {
+                    MessageBox.Show("Please enter a number to start a timer" + Placeholder,
+                                         "ScreenGO1", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    seconds = int.Parse(textBox1.Text);
+                    timer1.Start();
+                    IsTimerRunning = true;
+                    button2.Enabled = true;
+                    button1.Enabled = false;
+                    pausetimer.Enabled = true;
+                    PausedActive = 1;
+                }
             }
-            else
+            if (PausedActive == 1)
             {
-                seconds = int.Parse(textBox1.Text);
                 timer1.Start();
-                button2.Enabled = true; 
+                seconds = seconds;
+                IsTimerRunning = true;
+                button2.Enabled = true;
+                button1.Enabled = false;
+                pausetimer.Enabled = true;
+                PausedActive = 0;
             }
+
+
 
 
 
@@ -77,11 +136,116 @@ namespace ScreenGO1
 
         private void button2_Click(object sender, EventArgs e)
         {
+            seconds = int.Parse(textBox1.Text);
             timer1.Stop();
+            label1.Text = "00";
+            PausedActive = 0;
+            
+            pausetimer.Enabled = false;
             button2.Enabled = false;
+            button1.Enabled = true;
+            notifyIcon1.Text = "ScreenGO1 - Stopped";
+            this.Text = "ScreenGO1 - Stopped";
         }
 
         private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        
+
+        protected override void OnResize(EventArgs e)
+        {
+            base.OnResize(e);
+
+            if (this.WindowState == FormWindowState.Minimized)
+            {
+                this.Hide();
+                notifyIcon1.Visible = true;
+                
+            }
+        }
+
+        private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+
+            this.Show();
+            this.WindowState = FormWindowState.Normal;
+
+        }
+
+        private void pausetimer_Click(object sender, EventArgs e)
+        {
+            timer1.Stop();
+            PausedActive = 1;
+            notifyIcon1.Text = "ScreenGO1 - Paused";
+            this.Text = "ScreenGO1 - Paused";
+            button1.Enabled = true;
+            pausetimer.Enabled = false;
+           
+        }
+
+        private void quitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form4 form4 = new Form4();
+            form4.ShowDialog();
+
+
+        }
+
+        private void reviewToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://github.com/Payo64/ScreenGO1/issues/new");
+        }
+
+        private void toolStripSplitButton1_ButtonClick(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripSplitButton2_ButtonClick(object sender, EventArgs e)
+        {
+
+        }
+
+        private void optionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void preferenceToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form5 form5 = new Form5();
+            form5.ShowDialog();
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripSplitButton3_ButtonClick(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
 
         }
