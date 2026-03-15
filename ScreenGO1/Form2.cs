@@ -6,9 +6,12 @@ using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Media;
 using System.Runtime.InteropServices;
 using System.Text;
+using System.Windows.Controls;
 using System.Windows.Forms;
+using static ScreenGO1.Form7;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
 
@@ -32,15 +35,25 @@ namespace ScreenGO1
 
         public const int WM_NCLBUTTONDOWN = 0xA1;
         public const int HTCAPTION = 0x2;
+        SoundPlayer putis;
+        SoundPlayer soundr;
+       
+
         public Form2()
         {
             InitializeComponent();
-            this.TopMost = true;
-            string path = Path.Combine(Application.StartupPath, "audio.mp3");
-            timer1.Start();
-            seconds = 10;
-            label3.Text = seconds.ToString();
-            timer1.Start();
+
+            string path = Properties.Settings.Default.customSoundfile;
+
+            if (Properties.Settings.Default.resetsound == 1)
+            {
+                putis = new SoundPlayer(path);
+               
+            }
+            else
+            {
+                soundr = new SoundPlayer(Properties.Resources.eter);
+            }
         }
 
 
@@ -60,12 +73,35 @@ namespace ScreenGO1
 
         }
 
-
-        private void button1_Click(object sender, EventArgs e)
+        private void Form2_Load(object sender, EventArgs e)
         {
-            buton1msg(sender, e);
-           
+            if (Properties.Settings.Default.globalsoundcustom == 1)
+            {
+                
+                putis.PlayLooping();
+
+            }
+            else
+            {
+                
+                soundr.PlayLooping();
+            }
+
+
+            
+
+
         }
+
+        private void Form2_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            buton1msg(sender, e); this.Close();
+            putis.Stop();
+            soundr.Stop();
+
+
+        }
+
 
 
         private void button2_Click(object sender, EventArgs e)
@@ -109,20 +145,14 @@ namespace ScreenGO1
                 form1.Close();
             }
         }
-        private void Form2_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            buton1msg(sender, e); this.Close();
-        }
+        
 
         private void label3_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void Form2_Load(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void Draggable_Panel_Paint(object sender, PaintEventArgs e)
         {
@@ -136,6 +166,11 @@ namespace ScreenGO1
                 ReleaseCapture();
                 SendMessage(Handle, WM_NCLBUTTONDOWN, HTCAPTION, 0);
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
