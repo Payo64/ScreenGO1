@@ -47,7 +47,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>Desain_tanpa_judul-removebg-preview.ico</ApplicationIcon>
+    <ApplicationIcon>Screen - Copy.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="PresentationCore" />
@@ -170,6 +170,7 @@
     <None Include="Resources\glutony.png" />
     <None Include="OpenyaDoor.wav" />
     <None Include="eter.wav" />
+    <Content Include="Screen - Copy.ico" />
     <Content Include="TimersOUT.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

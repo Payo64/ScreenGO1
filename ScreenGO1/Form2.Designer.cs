@@ -106,7 +106,7 @@
             // 
             // Draggable_Panel
             // 
-            this.Draggable_Panel.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.Draggable_Panel.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.Draggable_Panel.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.Draggable_Panel.Location = new System.Drawing.Point(-6, -1);
             this.Draggable_Panel.Name = "Draggable_Panel";
