@@ -22,3 +22,5 @@ C:\Javascripy\ScreenGO1\ScreenGO1\obj\Debug\ScreenGO1.g.resources
 C:\Javascripy\ScreenGO1\ScreenGO1\obj\Debug\ScreenGO1.Form5.resources
 C:\Javascripy\ScreenGO1\ScreenGO1\obj\Debug\ScreenGO1.Form7.resources
 C:\Javascripy\ScreenGO1\ScreenGO1\bin\Debug\ScreenGO1.exe.config
+C:\Javascripy\ScreenGO1\ScreenGO1\obj\Debug\ScreenGO1.Form8.resources
+C:\Javascripy\ScreenGO1\ScreenGO1\obj\Debug\ScreenGO1.Form9.resources

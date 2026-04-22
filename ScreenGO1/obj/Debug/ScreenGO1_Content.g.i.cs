@@ -9,6 +9,7 @@
 //------------------------------------------------------------------------------
 
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("desain_tanpa_judul-removebg-preview.ico")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("screen%20-%20copy.ico")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("timersout.wav")]
 
 
