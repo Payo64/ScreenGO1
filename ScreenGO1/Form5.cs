@@ -18,7 +18,28 @@ namespace ScreenGO1
 
         private void Form5_Load(object sender, EventArgs e)
         {
-            loadform(new Form7());
+            loadform(new Form9());
+            if (Properties.Settings.Default.Apptheme == 1)
+            {
+                button1.BackColor = Color.FromArgb(25, 25, 25);
+                button1.ForeColor = Color.White;
+                button2.BackColor = Color.FromArgb(25, 25, 25);
+                button2.ForeColor = Color.White;
+                button3.BackColor = Color.FromArgb(25, 25, 25);
+                button3.ForeColor = Color.White;
+                this.BackColor = Color.FromArgb(25, 25, 25);
+
+            }
+            else if (Properties.Settings.Default.Apptheme == 0)
+            {
+                button1.BackColor = SystemColors.Control;
+                button1.ForeColor = Color.FromArgb(25, 25, 25);
+                button2.BackColor = SystemColors.Control;
+                button2.ForeColor = Color.FromArgb(25, 25, 25);
+                button3.BackColor = SystemColors.Control;
+                button3.ForeColor = Color.FromArgb(25, 25, 25);
+                this.BackColor = SystemColors.Control;
+            }
 
         }
 
@@ -42,6 +63,20 @@ namespace ScreenGO1
         private void button1_Click(object sender, EventArgs e)
         {
             loadform(new Form7());
+
+            
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            loadform(new Form8());
+
+            
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            loadform(new Form9());
         }
     }
 }

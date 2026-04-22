@@ -48,6 +48,55 @@ namespace ScreenGO1
         private void Form1_Load(object sender, EventArgs e)
         {
             toolStrip1.RenderMode = ToolStripRenderMode.System;
+
+            if (Properties.Settings.Default.Apptheme == 1)
+            {
+                button1.BackColor = Color.FromArgb(25, 25, 25);
+                button1.ForeColor = Color.White;
+                pausetimer.BackColor = Color.FromArgb(25, 25, 25);
+                pausetimer.ForeColor = Color.White;
+                button2.BackColor = Color.FromArgb(25, 25, 25);
+                button2.ForeColor = Color.White;
+
+                this.BackColor = Color.FromArgb(25, 25, 25);
+
+                label1.ForeColor = Color.White;
+                label1.BackColor = Color.FromArgb(25, 25, 25);
+                label6.ForeColor = Color.White;
+                label6.BackColor = Color.FromArgb(25, 25, 25);
+                label3.ForeColor = Color.White;
+                label3.BackColor = Color.FromArgb(25, 25, 25);
+                label4.ForeColor = Color.White;
+                label4.BackColor = Color.FromArgb(25, 25, 25);
+                label5.ForeColor = Color.White;
+                label5.BackColor = Color.FromArgb(25, 25, 25);
+                label6.ForeColor = Color.White;
+                label6.BackColor = Color.FromArgb(25, 25, 25);
+            }
+            else if (Properties.Settings.Default.Apptheme == 0)
+            {
+
+                this.BackColor = SystemColors.Control;
+                button1.BackColor = SystemColors.Control;
+                button1.ForeColor = Color.FromArgb(25, 25, 25);
+                pausetimer.BackColor = SystemColors.Control;
+                pausetimer.ForeColor = Color.FromArgb(25, 25, 25);
+                button2.BackColor = SystemColors.Control;
+                button2.ForeColor = Color.FromArgb(25, 25, 25);
+
+                label1.ForeColor = Color.FromArgb(25, 25, 25);
+                label1.BackColor = SystemColors.Control;
+                label6.ForeColor = Color.FromArgb(25, 25, 25);
+                label6.BackColor = SystemColors.Control;
+                label3.ForeColor = Color.FromArgb(25, 25, 25);
+                label3.BackColor = SystemColors.Control;
+                label4.ForeColor = Color.FromArgb(25, 25, 25);
+                label4.BackColor = SystemColors.Control;
+                label5.ForeColor = Color.FromArgb(25, 25, 25);
+                label5.BackColor = SystemColors.Control;
+                label6.ForeColor = Color.FromArgb(25, 25, 25);
+                label6.BackColor = SystemColors.Control;
+            }
         }
         private void timer1_Tick(object sender, EventArgs e)
         {

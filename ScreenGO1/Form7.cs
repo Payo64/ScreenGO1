@@ -121,7 +121,7 @@ namespace ScreenGO1
 
         private void resetmsg(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Clicking this button will reset the ringtone to its original settings, Do you want to reset it?", "ScreenGO1", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            DialogResult result = MessageBox.Show("Clicking this button will reset the ringtone to its original settings. Do you want to reset it?", "ScreenGO1", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
 
             if (result == DialogResult.Yes)
             {
@@ -137,9 +137,38 @@ namespace ScreenGO1
             }
             if (result == DialogResult.No)
             {
-               
-                
+                return;
 
+
+            }
+        }
+
+        private void DefaultDropDown_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form7_Load_1(object sender, EventArgs e)
+        {
+            if (Properties.Settings.Default.Apptheme == 1)
+            {
+                button1.BackColor = Color.FromArgb(25, 25, 25);
+                button1.ForeColor = Color.White;
+                buttonReset.BackColor = Color.FromArgb(25, 25, 25);
+                buttonReset.ForeColor = Color.White;
+                this.BackColor = Color.FromArgb(25, 25, 25);
+                label1.ForeColor = Color.White;
+                label2.ForeColor = Color.White;
+            }
+            if (Properties.Settings.Default.Apptheme == 0)
+            {
+                this.BackColor = SystemColors.Control;
+                button1.BackColor = SystemColors.Control;
+                button1.ForeColor = Color.FromArgb(25, 25, 25);
+                buttonReset.BackColor = SystemColors.Control;
+                buttonReset.ForeColor = Color.FromArgb(25, 25, 25);
+                label1.ForeColor = Color.FromArgb(25, 25, 25);
+                label2.ForeColor = Color.FromArgb(25, 25, 25);
             }
         }
     }

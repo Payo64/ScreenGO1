@@ -38,8 +38,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -52,6 +52,7 @@
             this.label1.Size = new System.Drawing.Size(278, 55);
             this.label1.TabIndex = 1;
             this.label1.Text = "ScreenGO1";
+            this.label1.Click += new System.EventHandler(this.label1_Click_1);
             // 
             // panel1
             // 
@@ -84,6 +85,7 @@
             this.label2.Size = new System.Drawing.Size(264, 20);
             this.label2.TabIndex = 4;
             this.label2.Text = "Payo64\'s ScreenGO1 [Unfinished]";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label3
             // 
@@ -94,6 +96,7 @@
             this.label3.Size = new System.Drawing.Size(152, 20);
             this.label3.TabIndex = 5;
             this.label3.Text = "Version: v0.3-alpha";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label4
             // 
@@ -136,16 +139,6 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::ScreenGO1.Properties.Resources.glutony;
-            this.pictureBox1.Location = new System.Drawing.Point(31, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(126, 121);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -156,6 +149,16 @@
             this.label7.TabIndex = 9;
             this.label7.Text = "username";
             this.label7.Click += new System.EventHandler(this.label7_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::ScreenGO1.Properties.Resources.glutony;
+            this.pictureBox1.Location = new System.Drawing.Point(31, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(126, 121);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // Form4
             // 

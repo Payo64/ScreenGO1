@@ -53,7 +53,7 @@ namespace ScreenGO1
             else
             {
                 
-                soundr = new SoundPlayer(Properties.Resources.eter);
+                soundr = new SoundPlayer(Properties.Resources.timersout);
             }
 
 
@@ -97,9 +97,6 @@ namespace ScreenGO1
 
         private void Form2_FormClosing(object sender, FormClosingEventArgs e)
         {
-            buton1msg(sender, e); 
-            putis?.Stop();
-            soundr?.Stop();
             
 
         }
@@ -109,7 +106,8 @@ namespace ScreenGO1
         private void button2_Click(object sender, EventArgs e)
         {
             buton2msg(sender, e);
-            
+            putis?.Stop();
+            soundr?.Stop();
 
         }
 
@@ -129,13 +127,12 @@ namespace ScreenGO1
             }
             if (result == DialogResult.No)
             {
-                button1.Enabled = true;
-                
-                
+
                 
                 putis?.Stop();
                 soundr?.Stop();
                 this.Close();
+               
 
             }
         }
@@ -166,10 +163,7 @@ namespace ScreenGO1
         }
         
 
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
+       
 
         
 
@@ -190,6 +184,17 @@ namespace ScreenGO1
         private void button1_Click(object sender, EventArgs e)
         {
             buton1msg(sender, e);
+        }
+
+        private void Form2_Leave(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form2_FormClosing_1(object sender, FormClosingEventArgs e)
+        {
+            putis?.Stop();
+            soundr?.Stop();
         }
     }
 }
