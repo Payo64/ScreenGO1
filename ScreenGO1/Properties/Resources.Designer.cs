@@ -78,5 +78,14 @@ namespace ScreenGO1.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream timersout {
+            get {
+                return ResourceManager.GetStream("timersout", resourceCulture);
+            }
+        }
     }
 }
