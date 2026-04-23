@@ -58,5 +58,41 @@ namespace ScreenGO1.Properties {
                 this["resetsound"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int Apptheme {
+            get {
+                return ((int)(this["Apptheme"]));
+            }
+            set {
+                this["Apptheme"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int timervalue {
+            get {
+                return ((int)(this["timervalue"]));
+            }
+            set {
+                this["timervalue"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool keeptimervalue {
+            get {
+                return ((bool)(this["keeptimervalue"]));
+            }
+            set {
+                this["keeptimervalue"] = value;
+            }
+        }
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -16,10 +17,10 @@ namespace ScreenGO1
 {
     public partial class Form7 : Form
     {
-        
+
         public int soundpath = 0;
-        
-        
+
+
         public class DataStore
         {
             public static int globalInteger = 0;
@@ -45,11 +46,11 @@ namespace ScreenGO1
 
         private void Form7_FormClosing(object sender, FormClosingEventArgs e)
         {
-           
-        
+
+
             Properties.Settings.Default.customSoundfile = textBox1.Text;
             Properties.Settings.Default.Save();
-        
+
         }
 
 
@@ -105,12 +106,70 @@ namespace ScreenGO1
 
         private void buttonReset_Click(object sender, EventArgs e)
         {
-            Properties.Settings.Default.resetsound = 0;
-            textBox1.Clear();
-            Properties.Settings.Default.customSoundfile = string.Empty;
-            Properties.Settings.Default.globalsoundcustom = 0;
-            DataStore.globalInteger = 0;
-            Properties.Settings.Default.Save();
+            resetmsg(sender, e);
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void resetmsg(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Clicking this button will reset the ringtone to its original settings. Do you want to reset it?", "ScreenGO1", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+
+            if (result == DialogResult.Yes)
+            {
+                Properties.Settings.Default.resetsound = 0;
+                textBox1.Clear();
+                Properties.Settings.Default.customSoundfile = string.Empty;
+                Properties.Settings.Default.globalsoundcustom = 0;
+                DataStore.globalInteger = 0;
+                Properties.Settings.Default.Save();
+
+
+
+            }
+            if (result == DialogResult.No)
+            {
+                return;
+
+
+            }
+        }
+
+        private void DefaultDropDown_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form7_Load_1(object sender, EventArgs e)
+        {
+            if (Properties.Settings.Default.Apptheme == 1)
+            {
+                button1.BackColor = Color.FromArgb(25, 25, 25);
+                button1.ForeColor = Color.White;
+                buttonReset.BackColor = Color.FromArgb(25, 25, 25);
+                buttonReset.ForeColor = Color.White;
+                this.BackColor = Color.FromArgb(25, 25, 25);
+                label1.ForeColor = Color.White;
+                label2.ForeColor = Color.White;
+            }
+            if (Properties.Settings.Default.Apptheme == 0)
+            {
+                this.BackColor = SystemColors.Control;
+                button1.BackColor = SystemColors.Control;
+                button1.ForeColor = Color.FromArgb(25, 25, 25);
+                buttonReset.BackColor = SystemColors.Control;
+                buttonReset.ForeColor = Color.FromArgb(25, 25, 25);
+                label1.ForeColor = Color.FromArgb(25, 25, 25);
+                label2.ForeColor = Color.FromArgb(25, 25, 25);
+            }
         }
     }
 }
