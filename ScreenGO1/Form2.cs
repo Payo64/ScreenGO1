@@ -5,13 +5,13 @@ using System.Data;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
-using System.Linq;
+
 using System.Media;
 using System.Runtime.InteropServices;
 using System.Text;
-using System.Windows.Controls;
+
 using System.Windows.Forms;
-using System.Windows.Shapes;
+
 using static ScreenGO1.Form7;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;

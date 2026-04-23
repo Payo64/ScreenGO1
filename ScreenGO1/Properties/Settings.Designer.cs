@@ -94,5 +94,17 @@ namespace ScreenGO1.Properties {
                 this["keeptimervalue"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string textboxt1timervalue {
+            get {
+                return ((string)(this["textboxt1timervalue"]));
+            }
+            set {
+                this["textboxt1timervalue"] = value;
+            }
+        }
     }
 }

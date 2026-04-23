@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
+
 using System.Media;
 using System.Text;
 using System.Windows.Forms;
@@ -172,7 +172,8 @@ namespace ScreenGO1
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-
+            Properties.Settings.Default.textboxt1timervalue = textBox1.Text;
+            Properties.Settings.Default.Save();
         }
 
         private void label2_Click(object sender, EventArgs e)
